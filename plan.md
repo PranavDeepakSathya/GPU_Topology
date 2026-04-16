@@ -1,4 +1,4 @@
-okay, let me fucking brain dump and you will collect it and make a nice pretty markdown
+okay, let me fucking brain dump 
 
 
 
