@@ -62,3 +62,24 @@ I guess for the second pass, we can sorta think about refining the notion of "te
 okay, after collecting some data for h100 link, we saw some rather interesting things, first of all, since the nvswitch or whatever the fuck is not part of the topology matrix I guess its not programmatically controlled? we can read more about nvlink itself. 
 
 second of all, maybe extact per lane shit is not needed, but rather we only need the throughput between two gpus, or from pcie to gpu or this and that. 
+
+Okay so this means that firstly, we have to start reading up on hardware. 
+
+
+IN the basic MODEL we assume that you can just split the flows however you please 
+this is NOT A GOOD IDEA, like if I want to transfer 1 tensor, It might be the case that I need to use that tensor in some operation. And also my layouts and stuff might not permit 
+the kind of sharding I want to do. 
+
+As much as I want it to be, TENSORS ARE NOT WATER!  
+
+for example, let us say half a tensor is running through slow PCIE and the other half is 
+running though NVLINK fast, the time it takes for the tensor to materialize and be ready 
+in the desination gpu is bound by the PCIE.
+
+I guess to some extent, the makespan case which we are doing, which is minimize the time 
+it takes for the last flow to complete, is covering for that. 
+
+The other, more important issue, is that our sharding might not be ideal towards the way that the water based splitting of transfers happens, and I am not sure if you can like push two loads into the same pipe and this and that, so I guess ACTUALLY READING HARDWARE AND LIKE WRITING SOME DATA TRANSFERS FOR NVIDIA if possible and modelling off of that might be a good idea. Or at least enumerate possiblities and allow for flexibility in the model. 
+
+
+
