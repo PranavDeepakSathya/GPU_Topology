@@ -83,3 +83,40 @@ The other, more important issue, is that our sharding might not be ideal towards
 
 
 
+# GPU Interconnect + Topology Reading List
+
+## Phase 0 — Basics
+- PCIe (overview)
+  https://en.wikipedia.org/wiki/PCI_Express
+
+## Phase 1 — GPU Interconnects
+- NVLink intro (NVIDIA blog)
+  https://developer.nvidia.com/blog/how-nvlink-will-enable-faster-easier-multi-gpu-computing/
+
+- PCIe vs NVLink (practical perspective)
+  https://timdettmers.com/2023/01/30/which-gpu-for-deep-learning/#NVLink
+
+## Phase 2 — Topology (important)
+- nvidia-smi topology docs
+  https://docs.nvidia.com/deploy/nvidia-smi/index.html#topology
+
+- NCCL topology guide
+  https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/topology.html
+
+## Phase 3 — Communication Algorithms
+- AllReduce / Ring explanation
+  https://blog.dailydoseofds.com/p/all-reduce-and-ring-reduce-for-model
+
+- NCCL internals (collectives)
+  https://developer.nvidia.com/blog/fast-multi-gpu-collectives-nccl/
+
+## Phase 4 — NUMA (light)
+- NUMA overview
+  https://en.wikipedia.org/wiki/Non-uniform_memory_access
+
+## Phase 5 — NVLink Fabric (inter-node)
+- NVLink overview / switch system
+  https://www.nvidia.com/en-us/data-center/nvlink/
+
+- Hopper architecture (NVLink network)
+  https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/
