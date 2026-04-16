@@ -1,0 +1,702 @@
+
+========== SYSTEM INFO ==========
+
+Linux 03e1e3838440 5.15.0-171-generic #181-Ubuntu SMP Fri Feb 6 22:44:50 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+Model name:                              AMD EPYC 7532 32-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      32
+Socket(s):                               2
+NUMA node(s):                            8
+NUMA node0 CPU(s):                       0-7,64-71
+NUMA node1 CPU(s):                       8-15,72-79
+NUMA node2 CPU(s):                       16-23,80-87
+NUMA node3 CPU(s):                       24-31,88-95
+NUMA node4 CPU(s):                       32-39,96-103
+NUMA node5 CPU(s):                       40-47,104-111
+NUMA node6 CPU(s):                       48-55,112-119
+NUMA node7 CPU(s):                       56-63,120-127
+
+========== GPU OVERVIEW ==========
+
+Wed Apr 15 14:29:26 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.65.06              Driver Version: 580.65.06      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:88:00.0 Off |                    0 |
+| N/A   31C    P0             54W /  350W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:8B:00.0 Off |                    0 |
+| N/A   33C    P0             53W /  350W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:C8:00.0 Off |                    0 |
+| N/A   29C    P0             53W /  350W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:CB:00.0 Off |                    0 |
+| N/A   29C    P0             51W /  350W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+========== TOPOLOGY MATRIX ==========
+
+	[4mGPU0	GPU1	GPU2	GPU3	NIC0	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	NV12	NV12	NV12	SYS	56-63,120-127	7		N/A
+GPU1	NV12	 X 	NV12	NV12	SYS	56-63,120-127	7		N/A
+GPU2	NV12	NV12	 X 	NV12	SYS	40-47,104-111	5		N/A
+GPU3	NV12	NV12	NV12	 X 	SYS	40-47,104-111	5		N/A
+NIC0	SYS	SYS	SYS	SYS	 X 				
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+NIC Legend:
+
+  NIC0: mlx5_0
+
+
+========== TOPOLOGY MP ==========
+
+	[4mGPU0	GPU1	GPU2	GPU3	NIC0	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	PXB	SYS	SYS	SYS	56-63,120-127	7		N/A
+GPU1	PXB	 X 	SYS	SYS	SYS	56-63,120-127	7		N/A
+GPU2	SYS	SYS	 X 	PXB	SYS	40-47,104-111	5		N/A
+GPU3	SYS	SYS	PXB	 X 	SYS	40-47,104-111	5		N/A
+NIC0	SYS	SYS	SYS	SYS	 X 				
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+
+NIC Legend:
+
+  NIC0: mlx5_0
+
+
+========== NVLINK STATUS - ALL GPUS ==========
+
+--- GPU 0 ---
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-cac3204e-090c-0970-ac6f-709f9cfc1697)
+	 Link 0: 25 GB/s
+	 Link 1: 25 GB/s
+	 Link 2: 25 GB/s
+	 Link 3: 25 GB/s
+	 Link 4: 25 GB/s
+	 Link 5: 25 GB/s
+	 Link 6: 25 GB/s
+	 Link 7: 25 GB/s
+	 Link 8: 25 GB/s
+	 Link 9: 25 GB/s
+	 Link 10: 25 GB/s
+	 Link 11: 25 GB/s
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-cac3204e-090c-0970-ac6f-709f9cfc1697)
+	 Link 0, P2P is supported: true
+	 Link 0, Access to system memory supported: true
+	 Link 0, P2P atomics supported: true
+	 Link 0, System memory atomics supported: true
+	 Link 0, SLI is supported: true
+	 Link 0, Link is supported: true
+	 Link 1, P2P is supported: true
+	 Link 1, Access to system memory supported: true
+	 Link 1, P2P atomics supported: true
+	 Link 1, System memory atomics supported: true
+	 Link 1, SLI is supported: true
+	 Link 1, Link is supported: true
+	 Link 2, P2P is supported: true
+	 Link 2, Access to system memory supported: true
+	 Link 2, P2P atomics supported: true
+	 Link 2, System memory atomics supported: true
+	 Link 2, SLI is supported: true
+	 Link 2, Link is supported: true
+	 Link 3, P2P is supported: true
+	 Link 3, Access to system memory supported: true
+	 Link 3, P2P atomics supported: true
+	 Link 3, System memory atomics supported: true
+	 Link 3, SLI is supported: true
+	 Link 3, Link is supported: true
+	 Link 4, P2P is supported: true
+	 Link 4, Access to system memory supported: true
+	 Link 4, P2P atomics supported: true
+	 Link 4, System memory atomics supported: true
+	 Link 4, SLI is supported: true
+	 Link 4, Link is supported: true
+	 Link 5, P2P is supported: true
+	 Link 5, Access to system memory supported: true
+	 Link 5, P2P atomics supported: true
+	 Link 5, System memory atomics supported: true
+	 Link 5, SLI is supported: true
+	 Link 5, Link is supported: true
+	 Link 6, P2P is supported: true
+	 Link 6, Access to system memory supported: true
+	 Link 6, P2P atomics supported: true
+	 Link 6, System memory atomics supported: true
+	 Link 6, SLI is supported: true
+	 Link 6, Link is supported: true
+	 Link 7, P2P is supported: true
+	 Link 7, Access to system memory supported: true
+	 Link 7, P2P atomics supported: true
+	 Link 7, System memory atomics supported: true
+	 Link 7, SLI is supported: true
+	 Link 7, Link is supported: true
+	 Link 8, P2P is supported: true
+	 Link 8, Access to system memory supported: true
+	 Link 8, P2P atomics supported: true
+	 Link 8, System memory atomics supported: true
+	 Link 8, SLI is supported: true
+	 Link 8, Link is supported: true
+	 Link 9, P2P is supported: true
+	 Link 9, Access to system memory supported: true
+	 Link 9, P2P atomics supported: true
+	 Link 9, System memory atomics supported: true
+	 Link 9, SLI is supported: true
+	 Link 9, Link is supported: true
+	 Link 10, P2P is supported: true
+	 Link 10, Access to system memory supported: true
+	 Link 10, P2P atomics supported: true
+	 Link 10, System memory atomics supported: true
+	 Link 10, SLI is supported: true
+	 Link 10, Link is supported: true
+	 Link 11, P2P is supported: true
+	 Link 11, Access to system memory supported: true
+	 Link 11, P2P atomics supported: true
+	 Link 11, System memory atomics supported: true
+	 Link 11, SLI is supported: true
+	 Link 11, Link is supported: true
+--- GPU 1 ---
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-5f65f834-9d79-dae7-626f-fa373b216537)
+	 Link 0: 25 GB/s
+	 Link 1: 25 GB/s
+	 Link 2: 25 GB/s
+	 Link 3: 25 GB/s
+	 Link 4: 25 GB/s
+	 Link 5: 25 GB/s
+	 Link 6: 25 GB/s
+	 Link 7: 25 GB/s
+	 Link 8: 25 GB/s
+	 Link 9: 25 GB/s
+	 Link 10: 25 GB/s
+	 Link 11: 25 GB/s
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-5f65f834-9d79-dae7-626f-fa373b216537)
+	 Link 0, P2P is supported: true
+	 Link 0, Access to system memory supported: true
+	 Link 0, P2P atomics supported: true
+	 Link 0, System memory atomics supported: true
+	 Link 0, SLI is supported: true
+	 Link 0, Link is supported: true
+	 Link 1, P2P is supported: true
+	 Link 1, Access to system memory supported: true
+	 Link 1, P2P atomics supported: true
+	 Link 1, System memory atomics supported: true
+	 Link 1, SLI is supported: true
+	 Link 1, Link is supported: true
+	 Link 2, P2P is supported: true
+	 Link 2, Access to system memory supported: true
+	 Link 2, P2P atomics supported: true
+	 Link 2, System memory atomics supported: true
+	 Link 2, SLI is supported: true
+	 Link 2, Link is supported: true
+	 Link 3, P2P is supported: true
+	 Link 3, Access to system memory supported: true
+	 Link 3, P2P atomics supported: true
+	 Link 3, System memory atomics supported: true
+	 Link 3, SLI is supported: true
+	 Link 3, Link is supported: true
+	 Link 4, P2P is supported: true
+	 Link 4, Access to system memory supported: true
+	 Link 4, P2P atomics supported: true
+	 Link 4, System memory atomics supported: true
+	 Link 4, SLI is supported: true
+	 Link 4, Link is supported: true
+	 Link 5, P2P is supported: true
+	 Link 5, Access to system memory supported: true
+	 Link 5, P2P atomics supported: true
+	 Link 5, System memory atomics supported: true
+	 Link 5, SLI is supported: true
+	 Link 5, Link is supported: true
+	 Link 6, P2P is supported: true
+	 Link 6, Access to system memory supported: true
+	 Link 6, P2P atomics supported: true
+	 Link 6, System memory atomics supported: true
+	 Link 6, SLI is supported: true
+	 Link 6, Link is supported: true
+	 Link 7, P2P is supported: true
+	 Link 7, Access to system memory supported: true
+	 Link 7, P2P atomics supported: true
+	 Link 7, System memory atomics supported: true
+	 Link 7, SLI is supported: true
+	 Link 7, Link is supported: true
+	 Link 8, P2P is supported: true
+	 Link 8, Access to system memory supported: true
+	 Link 8, P2P atomics supported: true
+	 Link 8, System memory atomics supported: true
+	 Link 8, SLI is supported: true
+	 Link 8, Link is supported: true
+	 Link 9, P2P is supported: true
+	 Link 9, Access to system memory supported: true
+	 Link 9, P2P atomics supported: true
+	 Link 9, System memory atomics supported: true
+	 Link 9, SLI is supported: true
+	 Link 9, Link is supported: true
+	 Link 10, P2P is supported: true
+	 Link 10, Access to system memory supported: true
+	 Link 10, P2P atomics supported: true
+	 Link 10, System memory atomics supported: true
+	 Link 10, SLI is supported: true
+	 Link 10, Link is supported: true
+	 Link 11, P2P is supported: true
+	 Link 11, Access to system memory supported: true
+	 Link 11, P2P atomics supported: true
+	 Link 11, System memory atomics supported: true
+	 Link 11, SLI is supported: true
+	 Link 11, Link is supported: true
+--- GPU 2 ---
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-59184139-7ec7-ebe6-017e-6010aa4cc440)
+	 Link 0: 25 GB/s
+	 Link 1: 25 GB/s
+	 Link 2: 25 GB/s
+	 Link 3: 25 GB/s
+	 Link 4: 25 GB/s
+	 Link 5: 25 GB/s
+	 Link 6: 25 GB/s
+	 Link 7: 25 GB/s
+	 Link 8: 25 GB/s
+	 Link 9: 25 GB/s
+	 Link 10: 25 GB/s
+	 Link 11: 25 GB/s
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-59184139-7ec7-ebe6-017e-6010aa4cc440)
+	 Link 0, P2P is supported: true
+	 Link 0, Access to system memory supported: true
+	 Link 0, P2P atomics supported: true
+	 Link 0, System memory atomics supported: true
+	 Link 0, SLI is supported: true
+	 Link 0, Link is supported: true
+	 Link 1, P2P is supported: true
+	 Link 1, Access to system memory supported: true
+	 Link 1, P2P atomics supported: true
+	 Link 1, System memory atomics supported: true
+	 Link 1, SLI is supported: true
+	 Link 1, Link is supported: true
+	 Link 2, P2P is supported: true
+	 Link 2, Access to system memory supported: true
+	 Link 2, P2P atomics supported: true
+	 Link 2, System memory atomics supported: true
+	 Link 2, SLI is supported: true
+	 Link 2, Link is supported: true
+	 Link 3, P2P is supported: true
+	 Link 3, Access to system memory supported: true
+	 Link 3, P2P atomics supported: true
+	 Link 3, System memory atomics supported: true
+	 Link 3, SLI is supported: true
+	 Link 3, Link is supported: true
+	 Link 4, P2P is supported: true
+	 Link 4, Access to system memory supported: true
+	 Link 4, P2P atomics supported: true
+	 Link 4, System memory atomics supported: true
+	 Link 4, SLI is supported: true
+	 Link 4, Link is supported: true
+	 Link 5, P2P is supported: true
+	 Link 5, Access to system memory supported: true
+	 Link 5, P2P atomics supported: true
+	 Link 5, System memory atomics supported: true
+	 Link 5, SLI is supported: true
+	 Link 5, Link is supported: true
+	 Link 6, P2P is supported: true
+	 Link 6, Access to system memory supported: true
+	 Link 6, P2P atomics supported: true
+	 Link 6, System memory atomics supported: true
+	 Link 6, SLI is supported: true
+	 Link 6, Link is supported: true
+	 Link 7, P2P is supported: true
+	 Link 7, Access to system memory supported: true
+	 Link 7, P2P atomics supported: true
+	 Link 7, System memory atomics supported: true
+	 Link 7, SLI is supported: true
+	 Link 7, Link is supported: true
+	 Link 8, P2P is supported: true
+	 Link 8, Access to system memory supported: true
+	 Link 8, P2P atomics supported: true
+	 Link 8, System memory atomics supported: true
+	 Link 8, SLI is supported: true
+	 Link 8, Link is supported: true
+	 Link 9, P2P is supported: true
+	 Link 9, Access to system memory supported: true
+	 Link 9, P2P atomics supported: true
+	 Link 9, System memory atomics supported: true
+	 Link 9, SLI is supported: true
+	 Link 9, Link is supported: true
+	 Link 10, P2P is supported: true
+	 Link 10, Access to system memory supported: true
+	 Link 10, P2P atomics supported: true
+	 Link 10, System memory atomics supported: true
+	 Link 10, SLI is supported: true
+	 Link 10, Link is supported: true
+	 Link 11, P2P is supported: true
+	 Link 11, Access to system memory supported: true
+	 Link 11, P2P atomics supported: true
+	 Link 11, System memory atomics supported: true
+	 Link 11, SLI is supported: true
+	 Link 11, Link is supported: true
+--- GPU 3 ---
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-e9477877-8875-cc98-ec19-fce6cb46e03e)
+	 Link 0: 25 GB/s
+	 Link 1: 25 GB/s
+	 Link 2: 25 GB/s
+	 Link 3: 25 GB/s
+	 Link 4: 25 GB/s
+	 Link 5: 25 GB/s
+	 Link 6: 25 GB/s
+	 Link 7: 25 GB/s
+	 Link 8: 25 GB/s
+	 Link 9: 25 GB/s
+	 Link 10: 25 GB/s
+	 Link 11: 25 GB/s
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-e9477877-8875-cc98-ec19-fce6cb46e03e)
+	 Link 0, P2P is supported: true
+	 Link 0, Access to system memory supported: true
+	 Link 0, P2P atomics supported: true
+	 Link 0, System memory atomics supported: true
+	 Link 0, SLI is supported: true
+	 Link 0, Link is supported: true
+	 Link 1, P2P is supported: true
+	 Link 1, Access to system memory supported: true
+	 Link 1, P2P atomics supported: true
+	 Link 1, System memory atomics supported: true
+	 Link 1, SLI is supported: true
+	 Link 1, Link is supported: true
+	 Link 2, P2P is supported: true
+	 Link 2, Access to system memory supported: true
+	 Link 2, P2P atomics supported: true
+	 Link 2, System memory atomics supported: true
+	 Link 2, SLI is supported: true
+	 Link 2, Link is supported: true
+	 Link 3, P2P is supported: true
+	 Link 3, Access to system memory supported: true
+	 Link 3, P2P atomics supported: true
+	 Link 3, System memory atomics supported: true
+	 Link 3, SLI is supported: true
+	 Link 3, Link is supported: true
+	 Link 4, P2P is supported: true
+	 Link 4, Access to system memory supported: true
+	 Link 4, P2P atomics supported: true
+	 Link 4, System memory atomics supported: true
+	 Link 4, SLI is supported: true
+	 Link 4, Link is supported: true
+	 Link 5, P2P is supported: true
+	 Link 5, Access to system memory supported: true
+	 Link 5, P2P atomics supported: true
+	 Link 5, System memory atomics supported: true
+	 Link 5, SLI is supported: true
+	 Link 5, Link is supported: true
+	 Link 6, P2P is supported: true
+	 Link 6, Access to system memory supported: true
+	 Link 6, P2P atomics supported: true
+	 Link 6, System memory atomics supported: true
+	 Link 6, SLI is supported: true
+	 Link 6, Link is supported: true
+	 Link 7, P2P is supported: true
+	 Link 7, Access to system memory supported: true
+	 Link 7, P2P atomics supported: true
+	 Link 7, System memory atomics supported: true
+	 Link 7, SLI is supported: true
+	 Link 7, Link is supported: true
+	 Link 8, P2P is supported: true
+	 Link 8, Access to system memory supported: true
+	 Link 8, P2P atomics supported: true
+	 Link 8, System memory atomics supported: true
+	 Link 8, SLI is supported: true
+	 Link 8, Link is supported: true
+	 Link 9, P2P is supported: true
+	 Link 9, Access to system memory supported: true
+	 Link 9, P2P atomics supported: true
+	 Link 9, System memory atomics supported: true
+	 Link 9, SLI is supported: true
+	 Link 9, Link is supported: true
+	 Link 10, P2P is supported: true
+	 Link 10, Access to system memory supported: true
+	 Link 10, P2P atomics supported: true
+	 Link 10, System memory atomics supported: true
+	 Link 10, SLI is supported: true
+	 Link 10, Link is supported: true
+	 Link 11, P2P is supported: true
+	 Link 11, Access to system memory supported: true
+	 Link 11, P2P atomics supported: true
+	 Link 11, System memory atomics supported: true
+	 Link 11, SLI is supported: true
+	 Link 11, Link is supported: true
+
+========== NVLINK ERROR COUNTERS ==========
+
+--- GPU 0 ---
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-cac3204e-090c-0970-ac6f-709f9cfc1697)
+	 Link 0: Replay Errors: 0
+	 Link 0: Recovery Errors: 0
+	 Link 0: CRC Errors: 0
+
+	 Link 1: Replay Errors: 0
+	 Link 1: Recovery Errors: 0
+	 Link 1: CRC Errors: 0
+
+	 Link 2: Replay Errors: 0
+	 Link 2: Recovery Errors: 0
+	 Link 2: CRC Errors: 0
+
+	 Link 3: Replay Errors: 0
+	 Link 3: Recovery Errors: 0
+	 Link 3: CRC Errors: 0
+
+	 Link 4: Replay Errors: 0
+	 Link 4: Recovery Errors: 0
+	 Link 4: CRC Errors: 0
+
+	 Link 5: Replay Errors: 0
+	 Link 5: Recovery Errors: 0
+	 Link 5: CRC Errors: 0
+
+	 Link 6: Replay Errors: 0
+	 Link 6: Recovery Errors: 0
+	 Link 6: CRC Errors: 0
+
+	 Link 7: Replay Errors: 0
+	 Link 7: Recovery Errors: 0
+	 Link 7: CRC Errors: 0
+
+	 Link 8: Replay Errors: 0
+	 Link 8: Recovery Errors: 0
+	 Link 8: CRC Errors: 0
+
+	 Link 9: Replay Errors: 0
+	 Link 9: Recovery Errors: 0
+	 Link 9: CRC Errors: 0
+
+	 Link 10: Replay Errors: 0
+	 Link 10: Recovery Errors: 0
+	 Link 10: CRC Errors: 0
+
+	 Link 11: Replay Errors: 0
+	 Link 11: Recovery Errors: 0
+	 Link 11: CRC Errors: 0
+
+--- GPU 1 ---
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-5f65f834-9d79-dae7-626f-fa373b216537)
+	 Link 0: Replay Errors: 0
+	 Link 0: Recovery Errors: 0
+	 Link 0: CRC Errors: 0
+
+	 Link 1: Replay Errors: 0
+	 Link 1: Recovery Errors: 0
+	 Link 1: CRC Errors: 0
+
+	 Link 2: Replay Errors: 0
+	 Link 2: Recovery Errors: 0
+	 Link 2: CRC Errors: 0
+
+	 Link 3: Replay Errors: 0
+	 Link 3: Recovery Errors: 0
+	 Link 3: CRC Errors: 0
+
+	 Link 4: Replay Errors: 0
+	 Link 4: Recovery Errors: 0
+	 Link 4: CRC Errors: 0
+
+	 Link 5: Replay Errors: 0
+	 Link 5: Recovery Errors: 0
+	 Link 5: CRC Errors: 0
+
+	 Link 6: Replay Errors: 0
+	 Link 6: Recovery Errors: 0
+	 Link 6: CRC Errors: 0
+
+	 Link 7: Replay Errors: 0
+	 Link 7: Recovery Errors: 0
+	 Link 7: CRC Errors: 0
+
+	 Link 8: Replay Errors: 0
+	 Link 8: Recovery Errors: 0
+	 Link 8: CRC Errors: 0
+
+	 Link 9: Replay Errors: 0
+	 Link 9: Recovery Errors: 0
+	 Link 9: CRC Errors: 0
+
+	 Link 10: Replay Errors: 0
+	 Link 10: Recovery Errors: 0
+	 Link 10: CRC Errors: 0
+
+	 Link 11: Replay Errors: 0
+	 Link 11: Recovery Errors: 0
+	 Link 11: CRC Errors: 0
+
+--- GPU 2 ---
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-59184139-7ec7-ebe6-017e-6010aa4cc440)
+	 Link 0: Replay Errors: 0
+	 Link 0: Recovery Errors: 0
+	 Link 0: CRC Errors: 0
+
+	 Link 1: Replay Errors: 0
+	 Link 1: Recovery Errors: 0
+	 Link 1: CRC Errors: 0
+
+	 Link 2: Replay Errors: 0
+	 Link 2: Recovery Errors: 0
+	 Link 2: CRC Errors: 0
+
+	 Link 3: Replay Errors: 0
+	 Link 3: Recovery Errors: 0
+	 Link 3: CRC Errors: 0
+
+	 Link 4: Replay Errors: 0
+	 Link 4: Recovery Errors: 0
+	 Link 4: CRC Errors: 0
+
+	 Link 5: Replay Errors: 0
+	 Link 5: Recovery Errors: 0
+	 Link 5: CRC Errors: 0
+
+	 Link 6: Replay Errors: 0
+	 Link 6: Recovery Errors: 0
+	 Link 6: CRC Errors: 0
+
+	 Link 7: Replay Errors: 0
+	 Link 7: Recovery Errors: 0
+	 Link 7: CRC Errors: 0
+
+	 Link 8: Replay Errors: 0
+	 Link 8: Recovery Errors: 0
+	 Link 8: CRC Errors: 0
+
+	 Link 9: Replay Errors: 0
+	 Link 9: Recovery Errors: 0
+	 Link 9: CRC Errors: 0
+
+	 Link 10: Replay Errors: 0
+	 Link 10: Recovery Errors: 0
+	 Link 10: CRC Errors: 0
+
+	 Link 11: Replay Errors: 0
+	 Link 11: Recovery Errors: 0
+	 Link 11: CRC Errors: 0
+
+--- GPU 3 ---
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-e9477877-8875-cc98-ec19-fce6cb46e03e)
+	 Link 0: Replay Errors: 0
+	 Link 0: Recovery Errors: 0
+	 Link 0: CRC Errors: 0
+
+	 Link 1: Replay Errors: 0
+	 Link 1: Recovery Errors: 0
+	 Link 1: CRC Errors: 0
+
+	 Link 2: Replay Errors: 0
+	 Link 2: Recovery Errors: 0
+	 Link 2: CRC Errors: 0
+
+	 Link 3: Replay Errors: 0
+	 Link 3: Recovery Errors: 0
+	 Link 3: CRC Errors: 0
+
+	 Link 4: Replay Errors: 0
+	 Link 4: Recovery Errors: 0
+	 Link 4: CRC Errors: 0
+
+	 Link 5: Replay Errors: 0
+	 Link 5: Recovery Errors: 0
+	 Link 5: CRC Errors: 0
+
+	 Link 6: Replay Errors: 0
+	 Link 6: Recovery Errors: 0
+	 Link 6: CRC Errors: 0
+
+	 Link 7: Replay Errors: 0
+	 Link 7: Recovery Errors: 0
+	 Link 7: CRC Errors: 0
+
+	 Link 8: Replay Errors: 0
+	 Link 8: Recovery Errors: 0
+	 Link 8: CRC Errors: 0
+
+	 Link 9: Replay Errors: 0
+	 Link 9: Recovery Errors: 0
+	 Link 9: CRC Errors: 0
+
+	 Link 10: Replay Errors: 0
+	 Link 10: Recovery Errors: 0
+	 Link 10: CRC Errors: 0
+
+	 Link 11: Replay Errors: 0
+	 Link 11: Recovery Errors: 0
+	 Link 11: CRC Errors: 0
+
+
+========== GPU DETAILS ==========
+
+index, name, uuid, pci.bus_id, pcie.link.gen.current, pcie.link.width.current, memory.total [MiB], compute_cap
+0, NVIDIA A100-SXM4-40GB, GPU-cac3204e-090c-0970-ac6f-709f9cfc1697, 00000000:88:00.0, 4, 16, 40960 MiB, 8.0
+1, NVIDIA A100-SXM4-40GB, GPU-5f65f834-9d79-dae7-626f-fa373b216537, 00000000:8B:00.0, 4, 16, 40960 MiB, 8.0
+2, NVIDIA A100-SXM4-40GB, GPU-59184139-7ec7-ebe6-017e-6010aa4cc440, 00000000:C8:00.0, 4, 16, 40960 MiB, 8.0
+3, NVIDIA A100-SXM4-40GB, GPU-e9477877-8875-cc98-ec19-fce6cb46e03e, 00000000:CB:00.0, 4, 16, 40960 MiB, 8.0
+
+========== PCIE TREE ==========
+
+lspci not available
+
+========== NUMA TOPOLOGY ==========
+
+numactl not available
+0-7,64-71
+8-15,72-79
+16-23,80-87
+24-31,88-95
+32-39,96-103
+40-47,104-111
+48-55,112-119
+56-63,120-127
+
+========== P2P ACCESS MATRIX (via Python) ==========
+
+PyTorch not available, skipping P2P matrix
+
+========== NCCL ENVIRONMENT ==========
+
+CUDA_HOME=/usr/local/cuda
+CUDA_VERSION=13.0.2
+GPU_COUNT=4
+NCCL_VERSION=2.28.3-1
+NVIDIA_PRODUCT_NAME=CUDA
+NVIDIA_REQUIRE_CUDA=cuda>=13.0 brand=unknown,driver>=535,driver<536 brand=grid,driver>=535,driver<536 brand=tesla,driver>=535,driver<536 brand=nvidia,driver>=535,driver<536 brand=quadro,driver>=535,driver<536 brand=quadrortx,driver>=535,driver<536 brand=nvidiartx,driver>=535,driver<536 brand=vapps,driver>=535,driver<536 brand=vpc,driver>=535,driver<536 brand=vcs,driver>=535,driver<536 brand=vws,driver>=535,driver<536 brand=cloudgaming,driver>=535,driver<536 brand=unknown,driver>=550,driver<551 brand=grid,driver>=550,driver<551 brand=tesla,driver>=550,driver<551 brand=nvidia,driver>=550,driver<551 brand=quadro,driver>=550,driver<551 brand=quadrortx,driver>=550,driver<551 brand=nvidiartx,driver>=550,driver<551 brand=vapps,driver>=550,driver<551 brand=vpc,driver>=550,driver<551 brand=vcs,driver>=550,driver<551 brand=vws,driver>=550,driver<551 brand=cloudgaming,driver>=550,driver<551 brand=unknown,driver>=565,driver<566 brand=grid,driver>=565,driver<566 brand=tesla,driver>=565,driver<566 brand=nvidia,driver>=565,driver<566 brand=quadro,driver>=565,driver<566 brand=quadrortx,driver>=565,driver<566 brand=nvidiartx,driver>=565,driver<566 brand=vapps,driver>=565,driver<566 brand=vpc,driver>=565,driver<566 brand=vcs,driver>=565,driver<566 brand=vws,driver>=565,driver<566 brand=cloudgaming,driver>=565,driver<566 brand=unknown,driver>=570,driver<571 brand=grid,driver>=570,driver<571 brand=tesla,driver>=570,driver<571 brand=nvidia,driver>=570,driver<571 brand=quadro,driver>=570,driver<571 brand=quadrortx,driver>=570,driver<571 brand=nvidiartx,driver>=570,driver<571 brand=vapps,driver>=570,driver<571 brand=vpc,driver>=570,driver<571 brand=vcs,driver>=570,driver<571 brand=vws,driver>=570,driver<571 brand=cloudgaming,driver>=570,driver<571 brand=unknown,driver>=575,driver<576 brand=grid,driver>=575,driver<576 brand=tesla,driver>=575,driver<576 brand=nvidia,driver>=575,driver<576 brand=quadro,driver>=575,driver<576 brand=quadrortx,driver>=575,driver<576 brand=nvidiartx,driver>=575,driver<576 brand=vapps,driver>=575,driver<576 brand=vpc,driver>=575,driver<576 brand=vcs,driver>=575,driver<576 brand=vws,driver>=575,driver<576 brand=cloudgaming,driver>=575,driver<576
+NV_CUDA_CUDART_DEV_VERSION=13.0.96-1
+NV_CUDA_CUDART_VERSION=13.0.96-1
+NV_CUDA_LIB_VERSION=13.0.2-1
+NV_CUDA_NSIGHT_COMPUTE_DEV_PACKAGE=cuda-nsight-compute-13-0=13.0.2-1
+NV_CUDA_NSIGHT_COMPUTE_VERSION=13.0.2-1
+NV_GPU=5,6,4,7
+NV_LIBNCCL_DEV_PACKAGE=libnccl-dev=2.28.3-1+cuda13.0
+NV_LIBNCCL_DEV_PACKAGE_NAME=libnccl-dev
+NV_LIBNCCL_DEV_PACKAGE_VERSION=2.28.3-1
+NV_LIBNCCL_PACKAGE=libnccl2=2.28.3-1+cuda13.0
+NV_LIBNCCL_PACKAGE_NAME=libnccl2
+NV_LIBNCCL_PACKAGE_VERSION=2.28.3-1
