@@ -57,4 +57,8 @@ say I decide oh this node can broadcast data, (like an NVSWITCH broadvcasting wi
 
 So I guess NVswitch is capable of (newly) doing arithmetic as well, like reduction inside the nswitch and some crazy shit like that, I can look into that, but for now, I guess anything that isn't MOVE A TO B as a static spec is out of the model. 
 
-I guess for the second pass, we can sorta think about refining the notion of "tensor" and also I guess thinking about programmatic granularity and control, hmm maybe we should think about that right now 
+I guess for the second pass, we can sorta think about refining the notion of "tensor" and also I guess thinking about programmatic granularity and control, hmm maybe we should think about that right now. 
+
+okay, after collecting some data for h100 link, we saw some rather interesting things, first of all, since the nvswitch or whatever the fuck is not part of the topology matrix I guess its not programmatically controlled? we can read more about nvlink itself. 
+
+second of all, maybe extact per lane shit is not needed, but rather we only need the throughput between two gpus, or from pcie to gpu or this and that. 
