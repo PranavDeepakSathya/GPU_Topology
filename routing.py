@@ -45,7 +45,20 @@ class Flow:
 class Topology:
     nodes: list[Node]
     edges: list[Edge]
+    def __post_init__(self):
+        # unique node names
+        names = [n.name for n in self.nodes]
+        dupes = [n for n in names if names.count(n) > 1]
+        if dupes:
+            raise ValueError(f"Duplicate node names: {set(dupes)}")
 
+        # edges reference nodes in the topology
+        node_set = set(self.nodes)
+        for e in self.edges:
+            if e.src not in node_set:
+                raise ValueError(f"Edge src '{e.src.name}' not in topology nodes")
+            if e.dst not in node_set:
+                raise ValueError(f"Edge dst '{e.dst.name}' not in topology nodes")
 
 # --- Path enumeration ---
 
